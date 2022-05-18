@@ -1,0 +1,32 @@
+<section class="container">
+  <h2>Dados Veiculo</h2>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col"></th>
+        <th scope="col">Modelo</th>
+        <th scope="col">Fabricante</th>
+        <th scope="col">Ano Fabricação</th>
+        <th scope="col">Chassi</th>
+        <th scope="col">Imposto</th>
+      </tr>
+    </thead>
+    <tbody *ngIf="veiculos.length > 0 ; else listaVazia">
+        <tr *ngFor="let veiculo of veiculos">
+          <th scope="row"></th>
+          <td>{{veiculo?.modelo}}</td>
+          <td>{{veiculo?.fabricante}}</td>
+          <td>{{veiculo?.anoFabricacao}}</td>
+          <td>{{veiculo?.chassi}}</td>
+          <td>{{veiculo?.imposto}}</td>
+        </tr>
+    </tbody>
+  </table>
+
+  <ng-template #listaVazia>
+    <p>Nenhum veículo cadastrado!</p>
+  </ng-template>
+</section>
+
+
+
